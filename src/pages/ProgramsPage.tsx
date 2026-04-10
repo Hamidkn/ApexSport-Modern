@@ -26,12 +26,12 @@ export default function ProgramsPage() {
     <div style={{ background: 'var(--ink)', minHeight: '100vh', paddingTop: 100 }}>
       {/* Header */}
       <div style={{ padding: '4rem 0 3rem', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 600, height: 300, background: 'radial-gradient(ellipse, rgba(24,201,138,.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 600, height: 300, background: 'radial-gradient(ellipse, rgba(59,130,246,.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--apex-bright)', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 10 }}>Training programs</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--#3B82F6', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 10 }}>Training programs</div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 600, color: 'white', letterSpacing: '-.02em', marginBottom: 16 }}>
-              Find your perfect <span style={{ fontStyle: 'italic', color: 'var(--apex-bright)' }}>program</span>
+              Find your perfect <span style={{ fontStyle: 'italic', color: 'var(--#3B82F6' }}>program</span>
             </h1>
             <p style={{ fontSize: 17, color: 'rgba(255,255,255,.5)', maxWidth: 540 }}>
               {programs.length} professional programs across running, swimming, and cycling — for every level.
@@ -61,9 +61,9 @@ export default function ProgramsPage() {
                 onClick={() => setSport(s)}
                 style={{
                   padding: '8px 18px', borderRadius: 100, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: 'none', fontFamily: 'var(--font-body)', transition: 'all .2s',
-                  background: sport === s ? 'var(--apex-bright)' : 'rgba(255,255,255,.06)',
+                  background: sport === s ? 'var(--#3B82F6' : 'rgba(255,255,255,.06)',
                   color: sport === s ? 'var(--ink)' : 'rgba(255,255,255,.6)',
-                  boxShadow: sport === s ? '0 4px 16px rgba(24,201,138,.3)' : 'none',
+                  boxShadow: sport === s ? '0 4px 16px rgba(59,130,246,.3)' : 'none',
                   transform: sport === s ? 'scale(1.03)' : 'scale(1)',
                 }}
               >

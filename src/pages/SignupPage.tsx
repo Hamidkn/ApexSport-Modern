@@ -48,17 +48,17 @@ export default function SignupPage() {
 
   return (
     <div style={{ background: 'var(--ink)', minHeight: '100vh', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '6rem 1rem 4rem', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 400, background: 'radial-gradient(ellipse, rgba(24,201,138,.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 400, background: 'radial-gradient(ellipse, rgba(59,130,246,.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       <div style={{ width: '100%', maxWidth: 520, position: 'relative' }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 9, background: 'linear-gradient(135deg, #0D6B52, #18C98A)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 9, background: 'linear-gradient(135deg, #1151A6, #3B82F6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Zap size={16} color="white" fill="white" />
             </div>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: 'white', fontWeight: 600 }}>
-              Apex<span style={{ color: 'var(--apex-bright)', fontStyle: 'italic' }}>Sport</span>
+              Apex<span style={{ color: 'var(--#3B82F6', fontStyle: 'italic' }}>Sport</span>
             </span>
           </Link>
         </div>
@@ -69,21 +69,21 @@ export default function SignupPage() {
             {Array.from({ length: totalSteps }, (_, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 <motion.div
-                  animate={{ background: i + 1 < step ? 'var(--apex-bright)' : i + 1 === step ? 'var(--apex-mid)' : 'rgba(255,255,255,.1)', scale: i + 1 === step ? 1.15 : 1 }}
+                  animate={{ background: i + 1 < step ? 'var(--#3B82F6' : i + 1 === step ? '#1151A6' : 'rgba(255,255,255,.1)', scale: i + 1 === step ? 1.15 : 1 }}
                   transition={{ duration: .3 }}
-                  style={{ width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, color: 'white', border: i + 1 === step ? '2px solid var(--apex-bright)' : 'none' }}
+                  style={{ width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, color: 'white', border: i + 1 === step ? '2px solid var(--#3B82F6' : 'none' }}
                 >
                   {i + 1 < step ? <Check size={14} /> : i + 1}
                 </motion.div>
                 <span style={{ fontSize: 12, color: i + 1 === step ? 'white' : 'rgba(255,255,255,.35)', fontWeight: i + 1 === step ? 600 : 400, display: window.innerWidth > 500 ? 'block' : 'none' }}>
                   {['Profile', 'Sport', 'Program', 'Confirm'][i]}
                 </span>
-                {i < totalSteps - 1 && <div style={{ flex: 1, height: 1, background: i + 1 < step ? 'var(--apex-bright)' : 'rgba(255,255,255,.1)', minWidth: 20, marginLeft: 6, transition: 'background .4s' }} />}
+                {i < totalSteps - 1 && <div style={{ flex: 1, height: 1, background: i + 1 < step ? 'var(--#3B82F6' : 'rgba(255,255,255,.1)', minWidth: 20, marginLeft: 6, transition: 'background .4s' }} />}
               </div>
             ))}
           </div>
           <div style={{ height: 3, background: 'rgba(255,255,255,.08)', borderRadius: 2, overflow: 'hidden' }}>
-            <motion.div animate={{ width: `${(step / totalSteps) * 100}%` }} transition={{ duration: .4 }} style={{ height: '100%', background: 'linear-gradient(90deg, var(--apex-mid), var(--apex-bright))', borderRadius: 2 }} />
+            <motion.div animate={{ width: `${(step / totalSteps) * 100}%` }} transition={{ duration: .4 }} style={{ height: '100%', background: 'linear-gradient(90deg, #1151A6, var(--#3B82F6)', borderRadius: 2 }} />
           </div>
         </div>
 
@@ -127,12 +127,12 @@ export default function SignupPage() {
                     <label className="input-label">Your main goal</label>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                       {GOALS.map(g => (
-                        <button key={g} type="button" onClick={() => update({ goal: g })} style={{ padding: '10px 12px', borderRadius: 'var(--r-md)', border: `1px solid ${state.goal === g ? 'rgba(24,201,138,.5)' : 'rgba(255,255,255,.1)'}`, background: state.goal === g ? 'rgba(24,201,138,.12)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontSize: 12, fontWeight: 500, color: state.goal === g ? 'var(--apex-bright)' : 'rgba(255,255,255,.6)', textAlign: 'left', fontFamily: 'var(--font-body)', transition: 'all .2s', lineHeight: 1.4 }}>{g}</button>
+                        <button key={g} type="button" onClick={() => update({ goal: g })} style={{ padding: '10px 12px', borderRadius: 'var(--r-md)', border: `1px solid ${state.goal === g ? 'rgba(59,130,246,.5)' : 'rgba(255,255,255,.1)'}`, background: state.goal === g ? 'rgba(59,130,246,.12)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontSize: 12, fontWeight: 500, color: state.goal === g ? 'var(--#3B82F6' : 'rgba(255,255,255,.6)', textAlign: 'left', fontFamily: 'var(--font-body)', transition: 'all .2s', lineHeight: 1.4 }}>{g}</button>
                       ))}
                     </div>
                   </div>
                   <p style={{ fontSize: 12, color: 'rgba(255,255,255,.3)', textAlign: 'center' }}>
-                    Already have an account? <Link to="/login" style={{ color: 'var(--apex-bright)', textDecoration: 'none', fontWeight: 600 }}>Log in</Link>
+                    Already have an account? <Link to="/login" style={{ color: 'var(--#3B82F6', textDecoration: 'none', fontWeight: 600 }}>Log in</Link>
                   </p>
                 </div>
               )}
@@ -144,9 +144,9 @@ export default function SignupPage() {
                     <label className="input-label">Your sport</label>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                       {SPORTS.map(s => (
-                        <motion.button key={s.id} type="button" onClick={() => update({ sport: s.id, program: '' })} whileHover={{ y: -2 }} whileTap={{ scale: .97 }} style={{ padding: '1rem 8px', borderRadius: 'var(--r-lg)', border: `1px solid ${state.sport === s.id ? 'rgba(24,201,138,.6)' : 'rgba(255,255,255,.1)'}`, background: state.sport === s.id ? 'rgba(24,201,138,.1)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'center', transition: 'all .2s', boxShadow: state.sport === s.id ? '0 0 20px rgba(24,201,138,.2)' : 'none' }}>
+                        <motion.button key={s.id} type="button" onClick={() => update({ sport: s.id, program: '' })} whileHover={{ y: -2 }} whileTap={{ scale: .97 }} style={{ padding: '1rem 8px', borderRadius: 'var(--r-lg)', border: `1px solid ${state.sport === s.id ? 'rgba(59,130,246,.6)' : 'rgba(255,255,255,.1)'}`, background: state.sport === s.id ? 'rgba(59,130,246,.1)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'center', transition: 'all .2s', boxShadow: state.sport === s.id ? '0 0 20px rgba(59,130,246,.2)' : 'none' }}>
                           <div style={{ fontSize: 28, marginBottom: 6 }}>{s.icon}</div>
-                          <div style={{ fontSize: 14, fontWeight: 600, color: state.sport === s.id ? 'var(--apex-bright)' : 'rgba(255,255,255,.8)' }}>{s.label}</div>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: state.sport === s.id ? 'var(--#3B82F6' : 'rgba(255,255,255,.8)' }}>{s.label}</div>
                           <div style={{ fontSize: 11, color: 'rgba(255,255,255,.35)', marginTop: 2 }}>{s.desc}</div>
                         </motion.button>
                       ))}
@@ -156,8 +156,8 @@ export default function SignupPage() {
                     <label className="input-label">Your level</label>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                       {LEVELS.map(l => (
-                        <button key={l.id} type="button" onClick={() => update({ level: l.id, program: '' })} style={{ padding: '1.1rem', borderRadius: 'var(--r-lg)', border: `1px solid ${state.level === l.id ? 'rgba(24,201,138,.6)' : 'rgba(255,255,255,.1)'}`, background: state.level === l.id ? 'rgba(24,201,138,.1)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'left', transition: 'all .2s', boxShadow: state.level === l.id ? '0 0 20px rgba(24,201,138,.15)' : 'none' }}>
-                          <div style={{ fontSize: 14, fontWeight: 600, color: state.level === l.id ? 'var(--apex-bright)' : 'rgba(255,255,255,.8)', marginBottom: 5 }}>{l.label}</div>
+                        <button key={l.id} type="button" onClick={() => update({ level: l.id, program: '' })} style={{ padding: '1.1rem', borderRadius: 'var(--r-lg)', border: `1px solid ${state.level === l.id ? 'rgba(59,130,246,.6)' : 'rgba(255,255,255,.1)'}`, background: state.level === l.id ? 'rgba(59,130,246,.1)' : 'rgba(255,255,255,.04)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'left', transition: 'all .2s', boxShadow: state.level === l.id ? '0 0 20px rgba(59,130,246,.15)' : 'none' }}>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: state.level === l.id ? 'var(--#3B82F6' : 'rgba(255,255,255,.8)', marginBottom: 5 }}>{l.label}</div>
                           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.35)', lineHeight: 1.4 }}>{l.desc}</div>
                         </button>
                       ))}
@@ -171,14 +171,14 @@ export default function SignupPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {programs.length === 0 && <p style={{ fontSize: 14, color: 'rgba(255,255,255,.4)' }}>Go back and select your sport first.</p>}
                   {programs.map(p => (
-                    <motion.button key={p.name} type="button" onClick={() => update({ program: p.name })} whileHover={{ x: 3 }} style={{ padding: '1rem 1.1rem', borderRadius: 'var(--r-lg)', border: `1px solid ${state.program === p.name ? 'rgba(24,201,138,.5)' : 'rgba(255,255,255,.08)'}`, background: state.program === p.name ? 'rgba(24,201,138,.08)' : 'rgba(255,255,255,.03)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'left', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 14 }}>
+                    <motion.button key={p.name} type="button" onClick={() => update({ program: p.name })} whileHover={{ x: 3 }} style={{ padding: '1rem 1.1rem', borderRadius: 'var(--r-lg)', border: `1px solid ${state.program === p.name ? 'rgba(59,130,246,.5)' : 'rgba(255,255,255,.08)'}`, background: state.program === p.name ? 'rgba(59,130,246,.08)' : 'rgba(255,255,255,.03)', cursor: 'pointer', fontFamily: 'var(--font-body)', textAlign: 'left', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 14 }}>
                       <div style={{ width: 42, height: 42, borderRadius: 12, background: `${p.bg}22`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{p.icon}</div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: state.program === p.name ? 'var(--apex-bright)' : 'white' }}>{p.name}</div>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: state.program === p.name ? 'var(--#3B82F6' : 'white' }}>{p.name}</div>
                         <div style={{ fontSize: 12, color: 'rgba(255,255,255,.35)', marginTop: 2 }}>{p.meta}</div>
                       </div>
                       <span className={`badge ${p.level === 'pro' ? 'badge-purple' : 'badge-blue'}`}>{p.level === 'pro' ? 'Pro' : 'Amateur'}</span>
-                      {state.program === p.name && <Check size={16} color="var(--apex-bright)" />}
+                      {state.program === p.name && <Check size={16} color="var(--#3B82F6" />}
                     </motion.button>
                   ))}
                 </div>
@@ -193,8 +193,8 @@ export default function SignupPage() {
                       <span style={{ color: 'white', fontWeight: 600, textTransform: label === 'Sport' || label === 'Level' ? 'capitalize' : 'none' }}>{value}</span>
                     </div>
                   ))}
-                  <div style={{ marginTop: '1.5rem', padding: '1rem', borderRadius: 'var(--r-md)', background: 'rgba(24,201,138,.08)', border: '1px solid rgba(24,201,138,.2)' }}>
-                    <p style={{ fontSize: 13, color: 'rgba(24,201,138,.8)', lineHeight: 1.6 }}>🎉 You're all set! After enrolling, your coach will reach out within 24 hours to schedule your first session.</p>
+                  <div style={{ marginTop: '1.5rem', padding: '1rem', borderRadius: 'var(--r-md)', background: 'rgba(59,130,246,.08)', border: '1px solid rgba(59,130,246,.2)' }}>
+                    <p style={{ fontSize: 13, color: 'rgba(59,130,246,.8)', lineHeight: 1.6 }}>🎉 You're all set! After enrolling, your coach will reach out within 24 hours to schedule your first session.</p>
                   </div>
                 </div>
               )}

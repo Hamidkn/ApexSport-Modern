@@ -13,9 +13,9 @@ export default function CoachesPage() {
         <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 600, height: 300, background: 'radial-gradient(ellipse, rgba(96,165,250,.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--apex-bright)', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 10 }}>Expert coaches</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--#3B82F6', letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 10 }}>Expert coaches</div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 600, color: 'white', letterSpacing: '-.02em', marginBottom: 16 }}>
-              Meet the <span style={{ fontStyle: 'italic', color: 'var(--apex-bright)' }}>experts</span>
+              Meet the <span style={{ fontStyle: 'italic', color: 'var(--#3B82F6' }}>experts</span>
             </h1>
             <p style={{ fontSize: 17, color: 'rgba(255,255,255,.5)', maxWidth: 540 }}>
               Every coach on ApexSport is a certified specialist with a proven track record of transforming athletes.

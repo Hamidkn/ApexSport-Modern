@@ -33,7 +33,7 @@ export default function LoginPage() {
   return (
     <div style={{ background: 'var(--ink)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6rem 1rem 3rem', position: 'relative', overflow: 'hidden' }}>
       {/* Background glow */}
-      <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 400, background: 'radial-gradient(ellipse, rgba(24,201,138,.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 400, background: 'radial-gradient(ellipse, rgba(59,130,246,.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -44,11 +44,11 @@ export default function LoginPage() {
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: '1.5rem' }}>
-            <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg, #0D6B52, #18C98A)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 20px rgba(24,201,138,.35)' }}>
+            <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg, #1151A6, #3B82F6)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 20px rgba(59,130,246,.35)' }}>
               <Zap size={18} color="white" fill="white" />
             </div>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'white', fontWeight: 600 }}>
-              Apex<span style={{ color: 'var(--apex-bright)', fontStyle: 'italic' }}>Sport</span>
+              Apex<span style={{ color: 'var(--#3B82F6', fontStyle: 'italic' }}>Sport</span>
             </span>
           </Link>
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 600, color: 'white', letterSpacing: '-.02em', marginBottom: 8 }}>Welcome back</h1>
@@ -127,7 +127,7 @@ export default function LoginPage() {
 
             <p style={{ textAlign: 'center', fontSize: 13, color: 'rgba(255,255,255,.35)' }}>
               Don't have an account?{' '}
-              <Link to="/signup" style={{ color: 'var(--apex-bright)', textDecoration: 'none', fontWeight: 600 }}>Sign up free</Link>
+              <Link to="/signup" style={{ color: 'var(--#3B82F6', textDecoration: 'none', fontWeight: 600 }}>Sign up free</Link>
             </p>
           </form>
 
@@ -139,7 +139,7 @@ export default function LoginPage() {
             </div>
             <button
               onClick={fillDemo}
-              style={{ padding: '7px 14px', borderRadius: 100, background: 'rgba(24,201,138,.1)', border: '1px solid rgba(24,201,138,.25)', color: 'var(--apex-bright)', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)', whiteSpace: 'nowrap' }}
+              style={{ padding: '7px 14px', borderRadius: 100, background: 'rgba(59,130,246,.1)', border: '1px solid rgba(59,130,246,.25)', color: 'var(--#3B82F6', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)', whiteSpace: 'nowrap' }}
             >
               Fill demo
             </button>
