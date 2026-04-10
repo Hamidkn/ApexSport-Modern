@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Navbar      from './components/Navbar';
-import HomePage    from './pages/HomePage';
-import ProgramsPage from './pages/ProgramsPage';
-import CoachesPage  from './pages/CoachesPage';
-import LoginPage    from './pages/LoginPage';
-import SignupPage   from './pages/SignupPage';
+import Navbar        from './components/Navbar';
+import HomePage      from './pages/HomePage';
+import ProgramsPage  from './pages/ProgramsPage';
+import CoachesPage   from './pages/CoachesPage';
+import LoginPage     from './pages/LoginPage';
+import SignupPage    from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
 
 function AppRoutes() {
@@ -31,8 +31,8 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppRoutes />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
