@@ -241,3 +241,184 @@ body::before {
   animation: marquee 32s linear infinite;
 }
 .marquee-track:hover { animation-play-state: paused; }
+
+/* ══════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════ */
+
+/* ── TABLET (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.5rem; }
+
+  /* Dashboard sidebar collapses */
+  .dashboard-sidebar { width: 64px !important; }
+  .dashboard-sidebar .s-label,
+  .dashboard-sidebar .a-name,
+  .dashboard-sidebar .a-prog,
+  .dashboard-sidebar .s-sec-lbl { display: none !important; }
+  .dashboard-sidebar .s-logo span { display: none !important; }
+}
+
+/* ── MOBILE (≤ 768px) ── */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+
+  /* Typography scale down */
+  h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+
+  /* Hero section */
+  .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .hero-card-preview { display: none !important; }
+  .hero-actions { flex-direction: column !important; align-items: stretch !important; }
+  .hero-actions .btn { text-align: center; justify-content: center; }
+  .hero-stats-row { gap: 1.5rem !important; }
+
+  /* Stat cards: 2 columns on mobile */
+  .stats-row-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+  /* Grid layouts → single column */
+  .grid-2col   { grid-template-columns: 1fr !important; }
+  .grid-3col   { grid-template-columns: 1fr !important; }
+  .grid-4col   { grid-template-columns: repeat(2,1fr) !important; }
+  .programs-grid { grid-template-columns: 1fr !important; }
+  .coaches-grid  { grid-template-columns: 1fr !important; }
+  .pb-grid       { grid-template-columns: 1fr !important; }
+
+  /* Sport cards: 2 columns */
+  .sport-cards-grid { grid-template-columns: repeat(2,1fr) !important; }
+
+  /* Steps: single column */
+  .steps-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .steps-connector { display: none !important; }
+
+  /* How it works connector line */
+  .how-connector { display: none !important; }
+
+  /* Nav */
+  .nav-desktop-links { display: none !important; }
+  .nav-mobile-btn    { display: flex !important; }
+  .nav-cta-group     { display: none !important; }
+
+  /* Signup: sport grid 2 col */
+  .sport-select-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .level-select-grid { grid-template-columns: 1fr 1fr !important; }
+  .goal-select-grid  { grid-template-columns: 1fr !important; }
+
+  /* Dashboard: hide sidebar completely, use bottom nav */
+  .dashboard-layout { flex-direction: column !important; }
+  .dashboard-sidebar { display: none !important; }
+  .dashboard-main    { width: 100% !important; }
+  .dashboard-topbar  { padding: 0 1rem !important; }
+  .dashboard-content { padding: 1rem !important; }
+
+  /* Dashboard stat cards */
+  .dash-stats-4 { grid-template-columns: repeat(2,1fr) !important; gap: 10px !important; }
+  .dash-grid-2  { grid-template-columns: 1fr !important; }
+  .dash-grid-3  { grid-template-columns: 1fr !important; }
+
+  /* Messages: hide conversation list by default */
+  .msg-conv-list { display: none !important; }
+  .msg-conv-list.open { display: flex !important; }
+
+  /* Settings: stack tabs above content */
+  .settings-layout { grid-template-columns: 1fr !important; }
+  .settings-tabs-row { display: flex !important; flex-wrap: wrap !important; flex-direction: row !important; gap: 4px !important; }
+  .settings-tabs-row button { flex: 1 1 auto !important; min-width: 80px !important; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
+  .footer-links { justify-content: center !important; }
+
+  /* Marquee text smaller */
+  .marquee-track span { font-size: 11px !important; }
+
+  /* PB grid on progress page */
+  .progress-grid-2 { grid-template-columns: 1fr !important; }
+
+  /* Notification dropdown: full width */
+  .notif-dropdown { width: calc(100vw - 2rem) !important; right: -1rem !important; }
+
+  /* Program header */
+  .prog-header-inner { flex-direction: column !important; gap: 1rem !important; }
+  .prog-header-pct   { text-align: left !important; }
+}
+
+/* ── SMALL MOBILE (≤ 480px) ── */
+@media (max-width: 480px) {
+  .container { padding: 0 0.75rem; }
+
+  /* Signup grid: 2 cols for sports on very small screens */
+  .sport-select-grid { grid-template-columns: repeat(2,1fr) !important; }
+
+  /* Profile form: single col */
+  .form-two-col { grid-template-columns: 1fr !important; }
+
+  /* Stat cards: 1 column */
+  .stats-row-4  { grid-template-columns: 1fr 1fr !important; }
+  .grid-4col    { grid-template-columns: 1fr 1fr !important; }
+
+  /* Hero stats: wrap */
+  .hero-stats-row { flex-wrap: wrap !important; }
+
+  /* CTA section padding */
+  .cta-section { padding: 3rem 1.25rem !important; }
+  .cta-actions { flex-direction: column !important; align-items: stretch !important; }
+  .cta-actions a { text-align: center; justify-content: center; }
+}
+
+/* ── MOBILE BOTTOM NAVIGATION (Dashboard) ── */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid rgba(59,130,246,.12);
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(30,64,175,.08);
+}
+.mobile-bottom-nav-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  border-radius: 8px;
+  transition: all .15s;
+  position: relative;
+}
+.mobile-nav-item span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--n-500);
+}
+.mobile-nav-item.active span { color: var(--b-600); }
+.mobile-nav-item.active svg  { color: var(--b-600) !important; }
+.mobile-nav-badge {
+  position: absolute;
+  top: 4px; right: 8px;
+  width: 16px; height: 16px;
+  background: var(--b-500);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid white;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav { display: block; }
+  /* Add padding to dashboard content so it doesn't hide behind bottom nav */
+  .dashboard-content { padding-bottom: 80px !important; }
+}

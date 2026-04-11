@@ -22,7 +22,7 @@ export default function CoachesPage() {
         </div>
       </div>
       <div className="container" style={{ paddingTop:'2.5rem', paddingBottom:'6rem' }}>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(320px,1fr))', gap:20 }}>
+        <div className="coaches-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:20 }}>
           {coaches.map((c,i)=>(
             <motion.div key={c.name} initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*.08, duration:.5 }}
               className="card" style={{ padding:'1.75rem' }}>

@@ -162,10 +162,11 @@ export default function DashboardPage() {
   const card: React.CSSProperties = { background:'white', border:'1px solid rgba(59,130,246,.1)', borderRadius:16, padding:'1.5rem', boxShadow:'0 2px 12px rgba(30,64,175,.06)' };
 
   return (
-    <div style={{ display:'flex', height:'100vh', overflow:'hidden', background:'var(--page-bg)' }}>
+    <div style={{ display:'flex', height:'100vh', overflow:'hidden', background:'var(--page-bg)', position:'relative' }}>
 
       {/* ── SIDEBAR ── */}
       <motion.aside initial={{ x:-240 }} animate={{ x:0 }} transition={{ duration:.5, ease:[.4,0,.2,1] }}
+        className="dashboard-sidebar"
         style={{ width:220, background:'linear-gradient(180deg, #1E3A8A 0%, #1D4ED8 100%)', display:'flex', flexDirection:'column', padding:'1.5rem 1rem', flexShrink:0, boxShadow:'4px 0 20px rgba(30,58,138,.2)' }}>
         <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:'2.5rem', paddingLeft:4 }}>
           <div style={{ width:30, height:30, borderRadius:8, background:'rgba(255,255,255,.2)', display:'flex', alignItems:'center', justifyContent:'center', boxShadow:'0 0 12px rgba(255,255,255,.2)' }}>
@@ -209,7 +210,7 @@ export default function DashboardPage() {
       <div style={{ flex:1, display:'flex', flexDirection:'column', overflow:'hidden' }}>
 
         {/* ── TOPBAR ── */}
-        <header style={{ height:58, background:'white', borderBottom:'1px solid rgba(59,130,246,.1)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 2rem', flexShrink:0, boxShadow:'0 2px 8px rgba(30,64,175,.05)' }}>
+        <header className="dashboard-topbar" style={{ height:58, background:'white', borderBottom:'1px solid rgba(59,130,246,.1)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 2rem', flexShrink:0, boxShadow:'0 2px 8px rgba(30,64,175,.05)' }}>
           <div>
             <div style={{ fontSize:15, fontWeight:600, color:'var(--n-900)' }}>{greeting}, {user.fname} 👋</div>
             <div style={{ fontSize:12, color:'var(--n-400)', marginTop:1 }}>Saturday, April 4 · Week 4 of 10</div>
@@ -273,7 +274,7 @@ export default function DashboardPage() {
         </header>
 
         {/* ── PAGE CONTENT ── */}
-        <div style={{ flex:1, overflow:'auto', padding:'2rem' }}>
+        <div className="dashboard-content" style={{ flex:1, overflow:'auto', padding:'2rem' }}>
           <AnimatePresence mode="wait">
             <motion.div key={page} initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-8 }} transition={{ duration:.25 }}>
 
@@ -720,6 +721,24 @@ export default function DashboardPage() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* ── MOBILE BOTTOM NAV ── */}
+      <nav className="mobile-bottom-nav">
+        <div className="mobile-bottom-nav-inner">
+          {navItems.map(item => (
+            <button key={item.id} onClick={() => setPage(item.id as typeof page)}
+              className={`mobile-nav-item ${page===item.id?'active':''}`}>
+              <item.icon size={20} color={page===item.id ? 'var(--b-600)' : 'var(--n-400)'} />
+              <span style={{ fontSize:10, fontWeight:500, color:page===item.id?'var(--b-600)':'var(--n-400)' }}>
+                {item.label}
+              </span>
+              {'badge' in item && item.badge > 0 && (
+                <div className="mobile-nav-badge">{item.badge}</div>
+              )}
+            </button>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 }

@@ -68,7 +68,7 @@ export default function HomePage() {
               Expert-built programs for runners, swimmers, cyclists, and more — personalised to your level, coached by the best.
             </p>
 
-            <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
+            <div className="hero-actions" style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
               <Link to="/signup" className="btn btn-primary" style={{ textDecoration:'none', fontSize:16, padding:'14px 34px' }}>
                 Start training free <ArrowRight size={18} />
               </Link>
@@ -77,7 +77,7 @@ export default function HomePage() {
 
             {/* Social proof */}
             <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:.7 }}
-              style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:16, marginTop:'2.5rem' }}>
+              className="hero-stats-row" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:16, marginTop:'2.5rem' }}>
               <div style={{ display:'flex' }}>
                 {['#3B82F6','#06B6D4','#8B5CF6','#60A5FA','#22D3EE'].map((c,i)=>(
                   <div key={i} style={{ width:32, height:32, borderRadius:'50%', background:c, border:'2px solid white', marginLeft:i?-8:0, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, color:'white', boxShadow:'0 2px 6px rgba(0,0,0,.15)' }}>
@@ -93,7 +93,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Stat cards */}
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:'5rem', maxWidth:880, margin:'5rem auto 0' }}>
+          <div className="stats-row-4" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:'5rem', maxWidth:880, margin:'5rem auto 0' }}>
             {stats.map((s,i)=>(
               <motion.div key={s.label} initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ delay:.5+i*.1 }}
                 style={{ padding:'1.5rem', borderRadius:'var(--r-lg)', textAlign:'center', background:'white', border:`1px solid rgba(59,130,246,.15)`, boxShadow:'0 4px 20px rgba(59,130,246,.08)' }}>
@@ -130,7 +130,7 @@ export default function HomePage() {
                 Find your <span className="gradient-text" style={{ fontStyle:'italic' }}>discipline</span>
               </h2>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14 }}>
+            <div className="sport-cards-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14 }}>
               {sportCards.map(s=>(
                 <motion.div key={s.label} variants={fadeUp}
                   whileHover={{ y:-4, transition:{ duration:.18 } }}
@@ -156,7 +156,7 @@ export default function HomePage() {
                 Everything you need to{' '}<span className="gradient-text" style={{ fontStyle:'italic' }}>reach the top</span>
               </h2>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))', gap:20 }}>
+            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:20 }}>
               {features.map(f=>(
                 <motion.div key={f.title} variants={fadeUp} className="card" style={{ padding:'2rem' }} whileHover={{ y:-6, transition:{ duration:.2 } }}>
                   <div style={{ width:52, height:52, borderRadius:16, background:`color-mix(in srgb, ${f.color} 10%, white)`, border:`1.5px solid color-mix(in srgb, ${f.color} 25%, white)`, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:'1.25rem' }}>
@@ -252,7 +252,7 @@ export default function HomePage() {
                 Up and running in <span className="gradient-text" style={{ fontStyle:'italic' }}>3 steps</span>
               </h2>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:2, maxWidth:860, margin:'0 auto', position:'relative' }}>
+            <div className="steps-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:2, maxWidth:860, margin:'0 auto', position:'relative' }}>
               <div style={{ position:'absolute', top:'2.5rem', left:'16.67%', right:'16.67%', height:1.5, background:'linear-gradient(90deg,var(--b-300),var(--c-400),var(--b-300))', pointerEvents:'none', zIndex:0 }} />
               {[
                 { n:'01', title:'Pick sport & level',       desc:'Tell us your discipline, fitness level, and training goals.' },
@@ -284,7 +284,7 @@ export default function HomePage() {
             <p style={{ fontSize:17, color:'rgba(255,255,255,.7)', marginBottom:'2.5rem', maxWidth:500, margin:'0 auto 2.5rem', position:'relative' }}>
               Join 12,000 athletes already training smarter. No commitment required.
             </p>
-            <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap', position:'relative' }}>
+            <div className="cta-actions" style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap', position:'relative' }}>
               <Link to="/signup" style={{ textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8, padding:'14px 36px', borderRadius:100, background:'white', color:'var(--b-700)', fontSize:16, fontWeight:600, boxShadow:'0 4px 20px rgba(0,0,0,.15)', transition:'all .2s' }}
                 onMouseEnter={e=>(e.currentTarget.style.transform='translateY(-2px)')}
                 onMouseLeave={e=>(e.currentTarget.style.transform='translateY(0)')}>
@@ -303,7 +303,7 @@ export default function HomePage() {
       {/* ── FOOTER ── */}
       <footer style={{ borderTop:'1px solid var(--n-200)', padding:'3rem 0 2rem', background:'white' }}>
         <div className="container">
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
+          <div className="footer-inner" style={{ display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
             <div style={{ display:'flex', alignItems:'center', gap:8 }}>
               <div style={{ width:28, height:28, borderRadius:8, background:'linear-gradient(135deg,#1D4ED8,#3B82F6)', display:'flex', alignItems:'center', justifyContent:'center' }}>
                 <Zap size={14} color="white" fill="white" />

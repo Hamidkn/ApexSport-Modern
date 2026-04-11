@@ -96,7 +96,7 @@ export default function ProgramsPage() {
         </div>
 
         <AnimatePresence mode="popLayout">
-          <motion.div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(310px,1fr))', gap:20 }}>
+          <motion.div className="programs-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:20 }}>
             {filtered.map((p,i)=>(
               <motion.div key={p.name} layout initial={{ opacity:0, scale:.93 }} animate={{ opacity:1, scale:1 }} exit={{ opacity:0, scale:.9 }} transition={{ delay:i*.04, duration:.3 }}
                 className="card" style={{ padding:'1.75rem' }} whileHover={{ y:-5, transition:{ duration:.2 } }}>
